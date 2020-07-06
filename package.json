@@ -1,0 +1,30 @@
+{
+  "name": "property-finder",
+  "version": "1.0.0",
+  "description": "learning to make property finder",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@reach/router": "^1.3.4",
+    "classmates": "^1.0.1",
+    "classnames": "^2.2.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "spectre.css": "^0.5.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.1",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.4.3",
+    "postcss-modules": "^3.1.0"
+  },
+  "staticPath": "public"
+}
