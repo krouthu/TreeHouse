@@ -1,8 +1,11 @@
-import React from 'react';
-//import logo from './logo.svg';
+// import React from 'react';
+// import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+// import fire from './fire';
 
-function App() {
+class App extends Component {
+	render() {
 	return (
 		<div className="App">
 			<header className="Profile">
@@ -12,11 +15,11 @@ function App() {
 				<label>First Name:&nbsp;</label>
 				<input type = "text"
 					id = "firstName"
-					value = "" />
+					placeholder = "First Name" />
 				<label>&nbsp;&nbsp;Last Name:&nbsp;</label>
 				<input type = "text"
 					id = "lastName"
-					value = ""/>
+					placeholder = "Last Name"/>
 			</header>
 			<br/>
 			<br/>
@@ -37,6 +40,7 @@ function App() {
 				<textarea
 					id = "aboutMe"
 					name = "aboutMe"
+					placeholder = "Tell the landlords a little bit about yourself here"
 					rows = "5"
 					cols = "50">
 				</textarea>
@@ -50,12 +54,12 @@ function App() {
 				<input
 					type = "text"
 					id = "lowPrice"
-					value = ""/>
+					placeholder = "Low End"/>
 				<label>&nbsp;to&nbsp;$</label>
 				<input
 					type = "text"
 					id = "highPrice"
-					value = ""/>
+					placeholder = "High End"/>
 			</header>
 			<br/>
 			<br/>
@@ -64,12 +68,12 @@ function App() {
 				<input
 					type = "text"
 					id = "minHousemates"
-					value = ""/>
+					placeholder = "Min # of Housemates"/>
 				<label>&nbsp;to&nbsp;</label>
 				<input
 					type = "text"
 					id = "maxHousemates"
-					value = ""/>
+					placeholder = "Max # of Housemates"/>
 			</header>
 			<br/>
 			<br/>
@@ -78,12 +82,12 @@ function App() {
 				<input
 					type = "text"
 					id = "minRooms"
-					value = ""/>
+					placeholder = "Min # of Bedrooms"/>
 				<label>&nbsp;to&nbsp;</label>
 				<input
 					type = "text"
 					id = "maxRooms"
-					value = ""/>
+					placeholder = "Max # of Bedrooms"/>
 			</header>
 			<br/>
 			<br/>
@@ -92,12 +96,12 @@ function App() {
 				<input
 					type = "text"
 					id = "minBath"
-					value = ""/>
+					placeholder = "Min # of Bathrooms"/>
 				<label>&nbsp;to&nbsp;</label>
 				<input
 					type = "text"
 					id = "maxBath"
-					value = ""/>
+					placeholder = "Max # of Bathrooms"/>
 			</header>
 			<br/>
 			<br/>
@@ -216,5 +220,5 @@ function App() {
 		</div>
 	);
 }
-
+}
 export default App;
