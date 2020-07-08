@@ -5,7 +5,7 @@ import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
 
 function NavBar(){
     return(
-      <Navbar bg="primary" variant="dark">
+      <Navbar bg="primary" variant="dark"> 
         <Navbar.Brand>
           <Link to="/">Treehouse</Link>
         </Navbar.Brand>
