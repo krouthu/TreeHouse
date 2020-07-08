@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Map from '/components/map/'
 import KeyFeatures from '/components/keyFeatures/'
+import NavBar from '../../components/navbar'
 
 function Details({ propertyId }) {
     const features = [
@@ -13,6 +14,7 @@ function Details({ propertyId }) {
     ]
     return (
       <div>
+        <NavBar />
         Show details for property with Id of {propertyId}
         <KeyFeatures features={features} />
         <Map />
