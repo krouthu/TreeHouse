@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "image": "john.jpg",
+        "first_name": "John",
+        "last_name": "Conner",
+        "age": 21,
+        "gender": "male",
+        "description": "This is description"
+    },
+    {
+        "id": 2,
+        "image": "sarah.jpg",
+        "first_name": "Sarah",
+        "last_name": "Lee",
+        "age": 24,
+        "gender": "female",
+        "description": "This is description"
+    }
+]
