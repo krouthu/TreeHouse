@@ -17,6 +17,7 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.1.1",
     "react-dom": "^16.13.1",
+    "firebase": "7.16.0",
     "spectre.css": "^0.5.8"
   },
   "devDependencies": {
