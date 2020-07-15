@@ -1,4 +1,21 @@
-import firebase from 'firebase/app'
+import firebase from "firebase/app"
+import "firebase/auth"
+import "firebase/firestore"
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyBomnBx_Kq8sWbs7dWFsJNMk8yMd33n-fo',
+  authDomain: 'treehouse-115.firebaseapp.com',
+  databaseURL: 'https://treehouse-115.firebaseio.com',
+  projectId: 'treehouse-115',
+  storageBucket: 'treehouse-115.appspot.com',
+  messagingSenderId: '1015579746939',
+  appId: '1:1015579746939:web:3fac54804ac9b337a038de',
+  measurementId: 'G-HFPJ3P1PDY'
+ };
+
+firebase.initializeApp(firebaseConfig);
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
