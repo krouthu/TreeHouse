@@ -5,17 +5,17 @@ import NavBar from '../../components/navbar'
 
 function Details({ propertyId }) {
     const features = [
-      'Help to Buy available, ideal for first time buyers',
-      'Within walking distance of the Northern Quarter, Ancoats & NOMA',
-      'Exposed brickwork retaining the charm of the existing building',
-      'Cycle storage',
-      'Victorian Mill conversion',
-      '13 unique 1,2 and 3 bed apartments available'
+      "Close to downtown",
+      "Within walking distance of Trader Joes",
+      "Exposed brickwork retaining the charm of the existing building",
+      "Bike storage",
+      "Parking for an extra fee",
+      "Flexible lease options"
     ]
     return (
       <div>
         <NavBar />
-        Show details for property with Id of {propertyId}
+        Property Id: {propertyId}
         <KeyFeatures features={features} />
         <Map />
       </div>
