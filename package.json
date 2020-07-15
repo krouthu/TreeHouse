@@ -20,6 +20,9 @@
     "firebase": "7.16.0",
     "spectre.css": "^0.5.8"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
