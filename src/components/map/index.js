@@ -1,7 +1,7 @@
 import React from "react";
 
 function Map() {
-  const address = "Mason Street, Manchester, Greater Manchester, M4";
+  const address = "1156 High St, Santa Cruz, CA 95064";
   const search = `https://maps.google.com/maps?q=${address}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
   return (

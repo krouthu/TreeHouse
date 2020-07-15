@@ -8,8 +8,8 @@ function Hero(){
     return(
         <div className={classes}>
             <div className="hero-body text-center text-light"> 
-                <h1>Housing Finder</h1>       
-                <p className="mb-0">Easily find your next housing</p>
+                <h1>Treehouse: Find Housing in Santa Cruz, CA</h1>       
+                <p className="mb-0">Made for Students by Students</p>
             </div>
         </div>
     )

@@ -35,10 +35,10 @@ class Filter extends React.Component {
                   <input
                     className="form-input"
                     min="0"
-                    max="10000000"
+                    max="10000"
                     type="number"
                     id="price-from"
-                    placeholder="$1,000,000"
+                    placeholder="$1,000"
                     value={this.state.priceFrom}
                     onChange={event => this.setState({ priceFrom: Number(event.target.value)})}
                   />
@@ -60,6 +60,8 @@ class Filter extends React.Component {
                     onChange={event => this.setState({ postcode: event.target.value })}
                     >
                     <option value="">Choose...</option>
+                    <option value="">95060</option>
+                    <option value="">95064</option>
                     {postcodes.map(pc => (
                     <option key={pc} value={pc.toLowerCase()}>
                         {pc}
