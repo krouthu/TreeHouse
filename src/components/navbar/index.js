@@ -12,9 +12,15 @@ function NavBar(){
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         </Navbar.Collapse>
+            
         <Link to="/login">
           <button type="button" className="btn btn-success">Log in</button>
         </Link>
+
+        <a href="https://chat-112.web.app/" >
+        <button type="button" className="btn btn-success">Chat</button>
+        </a>
+
       </Navbar>
     );
 }
