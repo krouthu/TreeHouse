@@ -13,9 +13,10 @@ function NavBar(){
         <Navbar.Collapse id="basic-navbar-nav">
         </Navbar.Collapse>
             
-        <Link to="/login">
-          <button type="button" className="btn btn-success">Log in</button>
-        </Link>
+        
+        <a href="https://treehouse-115.web.app/">
+        <button type="button" className="btn btn-success">Login</button>
+        </a>
 
         <a href="https://renter-profile2.web.app/">
         <button type="button" className="btn btn-success">Tenant Profile</button>

@@ -13,7 +13,7 @@ function Details({ propertyId }) {
       "Flexible lease options"
     ]
     return (
-      <div>
+    <div>
         <NavBar />
         Property Id: {propertyId}
         <KeyFeatures features={features} />
