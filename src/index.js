@@ -5,7 +5,7 @@ import { Router } from '@reach/router'
 import Home from './pages/Home'
 import Details from './pages/Details'
 import RentersListing from './pages/RentersListing'
-import Login from './pages/Login'
+import Login from './pages/ReactLogin/src'
 
 const rootElement = document.getElementById('root')
 

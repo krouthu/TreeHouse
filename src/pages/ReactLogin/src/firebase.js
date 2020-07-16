@@ -1,7 +1,8 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-
+import 'babel-polyfill';
+import './app';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDeb2MysL96GSUoG5yrqmEDMQ_XZVzbkC0",
