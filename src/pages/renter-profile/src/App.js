@@ -3,6 +3,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import fire from './fire';
+
 // import Firebase from 'firebase';
 
 class App extends Component {
@@ -181,9 +182,11 @@ class App extends Component {
 		<React.Fragment>
 		<form onSubmit={this.handleSubmit}>
 		<div className="App">
+			<br/>
 			<header className="Profile">
-				<h1>Your Profile</h1>
+				<h1>Tenant Profile</h1>
 			</header>
+			<br/>
 			<header className="Names">
 				<label>First Name:&nbsp;</label>
 				<input type = "text"

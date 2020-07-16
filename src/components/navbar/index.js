@@ -17,6 +17,7 @@ function NavBar(){
           <button type="button" className="btn btn-success">Log in</button>
         </Link>
 
+
         <a href="https://renter-profile2.web.app/">
         <button type="button" className="btn btn-success">Tenant Profile</button>
         </a>
