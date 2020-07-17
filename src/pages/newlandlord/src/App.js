@@ -47,8 +47,27 @@ class App extends Component {
 		const landlordRef = fire.database().ref('landlord');
 		//Use setState()  
 		this.setState({
-			name: this.refs.name.value,
-			age: this.refs.age.value
+			name: this.state.name,
+			age: this.state.age,
+			aboutMe: this.state.aboutMe,
+			price: this.state.price,
+			gender: this.state.gender,
+			housemates: this.state.housemates,
+			bed: this.state.bed,
+			bath: this.state.bath,
+			wantGarage: this.state.wantGarage,
+			noGarage: this.state.noGarage,
+			hasPets: this.state.hasPets,
+			noPets: this.state.noPets,
+			route10: this.state.route10,
+			route15: this.state.route15,
+			route16: this.state.route16,
+			route19: this.state.route19,
+			route20: this.state.route20,
+			route22: this.state.route22,
+			beach: this.state.beach,
+			downtown: this.state.downtown,
+			campus: this.state.campus
 		});
 		//this.state.name=this.refs.name.value
 		//this.state.age=this.refs.age.value
@@ -100,7 +119,7 @@ class App extends Component {
 		// campus: false
 		// });
 	}
-	
+
 	render() {
 		const landlords = this.state;
 		//
