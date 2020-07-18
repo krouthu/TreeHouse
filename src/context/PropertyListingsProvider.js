@@ -46,6 +46,11 @@ export class PropertyListingsProvider extends React.Component {
       filter
     })
   }
+
+  getListingByPropertyId = propertyId => {
+    const { propertyListings } = this.state
+    return propertyListings.find(listing => listing.id === Number(propertyId))
+  }
   
   render() {
     const { children } = this.props;
@@ -58,6 +63,7 @@ export class PropertyListingsProvider extends React.Component {
         value={{
           propertyListings: filteredListings,
           updateFilter: this.updateFilter,
+          getListingByPropertyId: this.getListingByPropertyId
         }}
         >
         {children} 

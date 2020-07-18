@@ -1,25 +1,24 @@
 import * as React from 'react'
-import Map from '/components/map/'
-import KeyFeatures from '/components/keyFeatures/'
-import NavBar from '../../components/navbar'
+
+import {
+  PropertyListingsProvider,
+  PropertyListingsConsumer
+} from '../../context/PropertyListingsProvider'
+
+import PropertyDetails from '../../components/propertyDetails'
 
 function Details({ propertyId }) {
-    const features = [
-      "Close to downtown",
-      "Within walking distance of Trader Joes",
-      "Exposed brickwork retaining the charm of the existing building",
-      "Bike storage",
-      "Parking for an extra fee",
-      "Flexible lease options"
-    ]
-    return (
-    <div>
-        <NavBar />
-        Property Id: {propertyId}
-        <KeyFeatures features={features} />
-        <Map />
-      </div>
-    )
-  }
+  return (
+    <div className="container">
+      <PropertyListingsProvider>
+        <PropertyListingsConsumer>
+          {({ getListingByPropertyId }) => (
+            <PropertyDetails listing={getListingByPropertyId(propertyId)} />
+          )}
+        </PropertyListingsConsumer>
+      </PropertyListingsProvider>
+    </div>
+  )
+}
 
 export default Details
