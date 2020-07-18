@@ -1,6 +1,3 @@
-
-
-
 import firebase from 'firebase'
 // import "firebase/firestore";
 // import { AppComponent } from './app.component';	
@@ -21,9 +18,9 @@ import firebase from 'firebase'
 
   // firebase.initializeApp(firebaseConfig);
   // firebase.analytics();
-
-var defaultApp = firebase.initializeApp(firebaseConfig);
-console.log(defaultApp.name);
+if(!firebase.apps.length)
+  var defaultApp = firebase.initializeApp(firebaseConfig);
+//console.log(defaultApp.name);
 //console.log(firebase.app().name);
 
 export default defaultApp;
