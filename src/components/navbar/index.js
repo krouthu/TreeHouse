@@ -11,17 +11,13 @@ function NavBar(){
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-        </Navbar.Collapse>
-            
+          <Nav className="mr-auto">
+            <Nav.Link> <Link to="/renters">All Renters</Link></Nav.Link>
+            <Nav.Link> <Link to="/landlord">Landlord Profile</Link></Nav.Link>
+            <Nav.Link> <Link to="/renter-profile">Renter Profile</Link></Nav.Link>
+          </Nav>
+        </Navbar.Collapse>   
         
-        <a href="https://treehouse-115.web.app/">
-        <button type="button" className="btn btn-success">Login</button>
-        </a>
-
-        <a href="https://renter-profile2.web.app/">
-        <button type="button" className="btn btn-success">Tenant Profile</button>
-        </a>
-
         <a href="https://chat-112.web.app/" >
         <button type="button" className="btn btn-success">Chat</button>
         </a>
