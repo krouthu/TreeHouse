@@ -38,33 +38,58 @@ class App extends Component {
 	}
 	handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(this.state.name);
-		console.log(this.state);
 		const landlordRef = fire.database().ref('landlord');
+		console.log(this.refs.name.value)
+		const landlords = this.state
 
-		this.setState({
-			name: this.refs.name.value,
-			age: this.refs.age.value,
-			aboutMe: this.refs.aboutMe.value,
-			price: this.refs.price.value,
-			gender: this.refs.gender.value,
-			housemates: this.refs.housemates.value,
-			bed: this.refs.bed.value,
-			bath: this.refs.bath.value,
-			garage: this.refs.garage.value,
-			hasPets: this.refs.hasPets.checked,
-			route10: this.refs.route10.checked,
-			route15: this.refs.route15.checked,
-			route16: this.refs.route16.checked,
-			route19: this.refs.route19.checked,
-			route20: this.refs.route20.checked,
-			route22: this.refs.route22.checked,
-			beach: this.refs.beach.checked,
-			downtown: this.refs.downtown.checked,
-			campus: this.refs.campus.checked
 
-		})
+		landlords.name = this.refs.name.value
+		landlords.age = this.refs.age.value
+		landlords.aboutMe = this.refs.aboutMe.value
+		landlords.price = this.refs.price.value
+		landlords.gender = this.refs.gender.value
+		landlords.housemates = this.refs.housemates.value
+		landlords.bed = this.refs.bed.value
+		landlords.bath = this.refs.bath.value
+		landlords.garage = this.refs.garage.value
+		landlords.hasPets = this.refs.hasPets.checked
+		landlords.route10 = this.refs.route10.checked
+		landlords.route15 = this.refs.route15.checked
+		landlords.route16 = this.refs.route16.checked
+		landlords.route19 = this.refs.route19.checked
+		landlords.route20 = this.refs.route20.checked
+		landlords.route22 = this.refs.route22.checked
+		landlords.beach = this.refs.beach.checked
+		landlords.downtown = this.refs.downtown.checked
+		landlords.campus = this.refs.campus.checked
+		this.setState(landlords)
 
+
+		// this.setState({
+		// 	//name: this.refs.name.value,
+		// 	name: "abc",
+		// 	age: this.refs.age.value,
+		// 	aboutMe: this.refs.aboutMe.value,
+		// 	price: this.refs.price.value,
+		// 	gender: this.refs.gender.value,
+		// 	housemates: this.refs.housemates.value,
+		// 	bed: this.refs.bed.value,
+		// 	bath: this.refs.bath.value,
+		// 	garage: this.refs.garage.value,
+		// 	hasPets: this.refs.hasPets.checked,
+		// 	route10: this.refs.route10.checked,
+		// 	route15: this.refs.route15.checked,
+		// 	route16: this.refs.route16.checked,
+		// 	route19: this.refs.route19.checked,
+		// 	route20: this.refs.route20.checked,
+		// 	route22: this.refs.route22.checked,
+		// 	beach: this.refs.beach.checked,
+		// 	downtown: this.refs.downtown.checked,
+		// 	campus: this.refs.campus.checked
+
+		// })
+		console.log(this.state.name)
+		console.log(this.state.age)
 		//this.state.name=this.refs.name.value
 		//this.state.age=this.refs.age.value
 
@@ -91,11 +116,40 @@ class App extends Component {
 			downtown: this.state.downtown,
 			campus: this.state.campus
 		}
+		console.log(landlord.name)
+		console.log(landlord.age)
 		landlordRef.push(landlord);
-		// this.setState({
-		// // name: '',
-		// // age: '',
-		// aboutMe: '',
+
+
+		/*this.refs.name.value = ''
+		this.refs.age.value = ''
+		this.state.aboutMe = ''
+		this.state.price = ''
+		this.state.gender = ''
+		this.state.housemates = ''
+		this.state.bed = ''
+		this.state.bath = ''
+		this.state.garage = ''
+		this.state.hasPets = false
+
+		this.state.route10 = false
+		this.state.route15 = false
+		this.state.route16 = false
+		this.state.route19 = false
+		this.state.route20 = false
+		this.state.route22 = false
+		this.state.beach = false
+		this.state.downtown = false
+		this.state.campus = false*/
+
+
+
+
+
+		//this.setState({
+		//name: '',
+		//age: '',
+		//aboutMe: '',
 		// price: '',
 		// gender: '',
 		// housemates: '',
@@ -114,269 +168,238 @@ class App extends Component {
 		// beach: false,
 		// downtown: false,
 		// campus: false
-		// });
+		//});
 	}
 	render() {
 		const landlords = this.state;
 		return (
 			<React.Fragment>
+
 				<form onSubmit={this.handleSubmit}>
-					<div className="App">
-						<header className="Profile">
-							<h1>Your Profile</h1>
-						</header>
-						<header className="Names">
-							<label>Name:&nbsp;</label>
-							<input type="text"
-								id="name"
-								name="name"
-								ref="name"
-								// onChange = {this.handleChange}
-								//value={this.state.firstName}
-								placeholder="Name" />
-						</header>
-						<br />
-						<br />
-						<div className="row">
-							<div className="col-xl-12">
-								<div
-									key={123}
-									className="card float-left"
-									style={{ width: "18rem", marginRight: "1rem" }}
-								>
-									<div className="card-body">
-										<h5 className="card-title">{landlords.name}</h5>
-										<p className="card-text">{landlords.age}</p>
-									</div>
-								</div>
+
+
+
+
+
+
+					<div className="container">
+						<div className="row header">
+							<div className="col-md-12">
+								<h1>
+									<a href="#">Treehouse User Signup</a>
+								</h1>
+								<p className="lead">Please submit your information here.</p>
 							</div>
 						</div>
-						<header className="AGE">
-							<label>Age:</label>
-							<br />
-							<input type="text"
-								id="age"
-								name="age"
-								min="14"
-								ref="age"
-							// value = {this.state.age}
-							// onChange = {this.handleChange}
-							/>
-						</header>
-						<br />
-						<br />
-						<header className="AboutMe">
-							<label>About Me:</label>
-							<br />
-							<textarea
-								id="aboutMe"
-								name="aboutMe"
-								placeholder="Tell the renters a little bit about yourself here"
-								rows="5"
-								cols="50"
-								ref="aboutMe"
-							//value = {this.state.aboutMe}
-							//onChange = {this.handleChange}
-							/>
-							{/*</textarea>*/}
-						</header>
-						<br />
-						<br />
-						<h3 className="Preferences">Please indicate your housing preferences in this section:</h3>
-						<br />
-						<header className="PriceRange">
-							<label>Price:&nbsp;$</label>
-							<input
-								type="text"
-								name="price"
-								id="price"
-								ref="price"
-								//onChange = {this.handleChange}
-								//value = {this.state.price}
-								placeholder="price" />
-						</header>
-						<br />
-						<br />
-						<header className="gender">
-							<label>Gender:&nbsp;</label>
-							<input
-								type="text"
-								name="gender"
-								id="gender"
-								ref="gender"
-								//onChange = {this.handleChange}
-								//value = {this.state.gender}
-								placeholder="gender" />
-						</header>
-						<br />
-						<br />
-						<header className="Housemates">
-							<label>Number of Housemates:&nbsp;</label>
-							<input
-								type="text"
-								id="housemates"
-								name="housemates"
-								ref="housemates"
-								//onChange = {this.handleChange}
-								//value = {this.state.housemates}
-								placeholder="number of Housemates" />
-						</header>
-						<br />
-						<br />
-						<header className="Rooms">
-							<label>Number of Bedrooms:&nbsp;</label>
-							<input
-								type="text"
-								id="bed"
-								name="bed"
-								ref="bed"
-								//onChange = {this.handleChange}
-								//value = {this.state.bed}
-								placeholder="number of Bedrooms" />
-						</header>
-						<br />
-						<br />
-						<header className="Bathrooms">
-							<label>Number of Bathrooms:&nbsp;</label>
-							<input
-								type="text"
-								id="bath"
-								name="bath"
-								ref="bath"
-								//onChange = {this.handleChange}
-								//value = {this.state.bath}
-								placeholder="number of Bathrooms" />
-						</header>
-						<br />
-						<br />
-						<header className="Garage">
-							<label>Number of Parking Spaces:&nbsp;</label>
-							<input
-								type="text"
-								id="garage"
-								name="garage"
-								ref="garage"
-								//onChange = {this.handleChange}
-								//value = {this.state.bath}
-								placeholder="number of Bathrooms" />
-						</header>
-						<br />
-						<br />
-						<header className="Pets">
-							<label>Do you have any pets?&nbsp;&nbsp;</label>
-							<input
-								type="checkbox"
-								id="hasPets"
-								name="hasPets"
-								ref="hasPets"
-							//onChange = {this.handleChange}
-							//checked = {this.state.hasPets}
-							/>
-							<label>Yes&nbsp;&nbsp;</label>
-						</header>
-						<br />
-						<br />
-						<header className="Bus">
-							<label>Nearby Bus Routes:</label>
-							<br />
-							<input
-								type="checkbox"
-								id="route10"
-								name="route10"
-								ref="route10"
-							//onChange = {this.handleChange}
-							//checked = {this.state.route10}
-							/>
-							<label>Route 10</label>
-							<br />
-							<input
-								type="checkbox"
-								id="route15"
-								name="route15"
-								ref="route15"
-							//onChange = {this.handleChange}
-							//checked = {this.state.route15}
-							/>
-							<label>Route 15</label>
-							<br />
-							<input
-								type="checkbox"
-								id="route16"
-								name="route16"
-								ref="route16"
-							//onChange = {this.handleChange}
-							//checked = {this.state.route16}
-							/>
-							<label>Route 16</label>
-							<br />
-							<input
-								type="checkbox"
-								id="route19"
-								name="route19"
-								ref="route19"
-							//onChange = {this.handleChange}
-							//checked = {this.state.route19}
-							/>
-							<label>Route 19</label>
-							<br />
-							<input
-								type="checkbox"
-								id="route20"
-								name="route20"
-								ref="route20"
-							//onChange = {this.handleChange}
-							//checked = {this.state.route20}
-							/>
-							<label>Route 20</label>
-							<br />
-							<input
-								type="checkbox"
-								id="route22"
-								name="route22"
-								ref="route22"
-							//onChange = {this.handleChange}
-							//checked = {this.state.route22}
-							/>
-							<label>Route 22</label>
-						</header>
-						<br />
-						<br />
-						<header className="Location">
-							<label>Location:</label>
-							<br />
-							<input
-								type="checkbox"
-								id="beach"
-								name="beach"
-								ref="beach"
-							//onChange = {this.handleChange}
-							//checked = {this.state.beach}
-							/>
-							<label>Near the Beach</label>
-							<br />
-							<input
-								type="checkbox"
-								id="downtown"
-								name="downtown"
-								ref="downtown"
-							//onChange = {this.handleChange}
-							//checked = {this.state.downtown}
-							/>
-							<label>Near Downtown</label>
-							<br />
-							<input
-								type="checkbox"
-								id="campus"
-								name="campus"
-								ref="campus"
-							//onChange = {this.handleChange}
-							//checked = {this.state.campus}
-							/>
-							<label>Near Campus</label>
-						</header>
-						<br />
-						<br />
-						<button type="submit" onClick={this.handleSubmit}>Submit</button>
+
+
+						<div className="row">
+							<div className="col-md-6">
+								<h3>Identity</h3>
+								<div>
+									<div className="form-group">
+										<p>
+											<b>Select Your Identity</b>
+										</p>
+										<select class="form-control">
+											<option>landlord</option>
+											<option>renter</option>
+										</select>
+									</div>
+								</div>
+
+								<h3>House information</h3>
+								<div>
+									<form>
+										<div>
+											<div className="form-group has-error">
+												<label for="bed">Number of Bedrooms:</label>
+												<input maxlength="100"
+													type="text"
+													name="bed"
+													className="form-control"
+													id="bed"
+													ref='bed' />
+											</div>
+											<div className="form-group">
+												<label for="bath">Number of Bathrooms:</label>
+												<input type="text"
+													name="bath"
+													className="form-control"
+													id="bath"
+													ref='bath'
+												/>
+											</div>
+											<div className="form-group">
+												<label for="id_sender">Number of Parking Lots:</label>
+												<input type="text"
+													name="garage"
+													className="form-control"
+													id="garage"
+													ref='garage'
+
+												/>
+											</div>
+											<div className="form-group">
+												<label for="id_sender">Number of Housemates:</label>
+												<input type="text"
+													name="sender"
+													className="form-control"
+													id="id_sender"
+													ref='housemates'
+												/>
+											</div>
+											<div className="form-group">
+												<label for="id_sender">Price / Month:</label>
+												<input type="text"
+													name="sender"
+													className="form-control"
+													id="id_sender"
+													ref='price'
+												/>
+											</div>
+
+
+
+										</div>
+									</form>
+								</div>
+
+							</div>
+
+							{/* 右边 */}
+							<div className="col-md-6">
+								<h3>Personal information</h3>
+								<div>
+									<form>
+										<div>
+											<div className="form-group has-error">
+												<label for="id_subject">Name:</label>
+												<input maxlength="100"
+													type="text"
+													name="subject"
+													className="form-control"
+													id="id_subject"
+													ref='name'
+												/>
+											</div>
+											<div className="form-group">
+												<label for="id_message">Age:</label>
+												<input type="text" name="message" className="form-control" id="id_message" ref='age' />
+											</div>
+											<div className="form-group">
+												<label for="id_sender">Gender:</label>
+												<input type="text" name="sender" className="form-control" id="id_sender" ref='gender' />
+											</div>
+											<div className="form-group">
+												<label for="id_sender">AboutMe:</label>
+												<input type="text" name="sender" className="form-control" id="id_sender" ref='aboutMe' />
+											</div>
+										</div>
+									</form>
+								</div>
+
+
+								<form>
+									<div>
+										<div className="form-group">
+											<label for="id_sender">Pets:</label>
+											<div className="d-flex">
+												<div className="form-check">
+													<input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" ref='hasPets' checked />
+													<label className="form-check-label" for="exampleRadios1">
+														Yes
+													</label>
+												</div>
+												&nbsp;	&nbsp;	&nbsp;
+												<div className="form-check">
+													<input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" />
+													<label className="form-check-label" for="exampleRadios2">
+														No
+													</label>
+												</div>
+											</div>
+										</div>
+
+										<div className="form-group">
+											<label for="id_sender">Nearby Bus Routes:</label>
+											<div className="d-flex">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="customCheck10" ref='route10' />
+													<label class="custom-control-label" for="customCheck10">10</label>
+												</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="customCheck15" ref='route15' />
+													<label class="custom-control-label" for="customCheck15">15</label>
+												</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="customCheck16" ref='route16' />
+													<label class="custom-control-label" for="customCheck16">16</label>
+												</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="customCheck19" ref='route19' />
+													<label class="custom-control-label" for="customCheck19">19</label>
+												</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="customCheck20" ref='route20' />
+													<label class="custom-control-label" for="customCheck20">20</label>
+												</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="customCheck22" ref='route22' />
+													<label class="custom-control-label" for="customCheck22">22</label>
+												</div>
+
+											</div>
+										</div>
+
+
+										<div className="form-group">
+											<label for="id_sender">Location:</label>
+											<div className="d-flex">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="Beach" ref='beach'/>
+													<label class="custom-control-label" for="Beach">Near the Beach</label>
+												</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="Downtown" ref='downtown'/>
+													<label class="custom-control-label" for="Downtown">Near Downtown</label>
+												</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="Campus" ref='campus'/>
+													<label class="custom-control-label" for="Campus">Near Campus</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+
+
+
+
+
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+
+					<div className="App">
+						
+						
+						<button className="btn btn-primary center-btn" type="submit" >Submit</button>
 						<br />
 						<br />
 						<br />
