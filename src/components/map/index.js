@@ -1,7 +1,6 @@
 import React from "react";
 
-function Map() {
-  const address = "1156 High St, Santa Cruz, CA 95064";
+function Map({address}) {
   const search = `https://maps.google.com/maps?q=${address}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
   return (

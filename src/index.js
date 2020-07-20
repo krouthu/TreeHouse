@@ -5,7 +5,9 @@ import { Router } from '@reach/router'
 import Home from './pages/Home'
 import Details from './pages/Details'
 import RentersListing from './pages/RentersListing'
-import Login from './pages/ReactLogin/src'
+//import Login from './pages/ReactLogin/src/index'
+import Landlord from './pages/newlandlord/src/index'
+import RenterProfile from './pages/renter-profile/src/index'
 
 const rootElement = document.getElementById('root')
 
@@ -14,7 +16,8 @@ ReactDOM.render(
     <Home default />
     <Details path="/details/:propertyId" />
     <RentersListing path="/renters" />
-    <Login path="/login" />
+    <Landlord path="/landlord" />
+    <RenterProfile path="/renter-profile" />
   </Router>,
   rootElement
 )
