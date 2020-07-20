@@ -1,9 +1,7 @@
-// import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
 import fire from './fire';
-
+import './custom.scss'
 // import Firebase from 'firebase';
 
 class App extends Component {
@@ -46,6 +44,18 @@ class App extends Component {
 			[evt.target.name]: value
 		});
 	}
+
+	handlePetsChange = (changeEvent) => {
+  this.setState({
+    hasPets: changeEvent.target.value
+  });
+}
+
+handleGarageChange = (changeEvent) => {
+this.setState({
+	wantGarage: changeEvent.target.value
+});
+}
 
 	handleSubmit = (e) => {
 		e.preventDefault();
@@ -152,7 +162,7 @@ class App extends Component {
 		let first_name = e.target.value;
 		let last_name = e.target.value;
 		this.setState({ firstName: first_name, lastName: last_name });
-		console.log(this.state);  
+		console.log(this.state);
 	}
 */
 
@@ -180,272 +190,479 @@ class App extends Component {
 	render() {
 	return (
 		<React.Fragment>
-		<form onSubmit={this.handleSubmit}>
-		<div className="App">
-			<br/>
-			<header className="Profile">
-				<h1>Tenant Profile</h1>
-			</header>
-			<br/>
-			<header className="Names">
-				<label>First Name:&nbsp;</label>
-				<input type = "text"
-					id = "firstName"
-					name = "firstName"
-					onChange = {this.handleChange}
-					value={this.state.firstName}
-					placeholder = "First Name" />
-				<label>&nbsp;&nbsp;Last Name:&nbsp;</label>
-				<input type = "text"
-					id = "lastName"
-					name = "lastName"
-					onChange = {this.handleChange}
-					value = {this.state.lastName}
-					placeholder = "Last Name"/>
-			</header>
-			<br/>
-			<br/>
-			<header className="DOB">
-				<label>Date of Birth:</label>
-				<br/>
-				<input type="date"
-					id = "dob"
-					name = "dob"
-					min = "1900-01-01"
-					max = "2010-01-01"
-					value = {this.state.dob}
-					onChange = {this.handleChange}/>
-			</header>
-			<br/>
-			<br/>
-			<header className="AboutMe">
-				<label>About Me:</label>
-				<br/>
-				<textarea
-					id = "aboutMe"
-					name = "aboutMe"
-					placeholder = "Tell the landlords a little bit about yourself here"
-					rows = "5"
-					cols = "50"
-					value = {this.state.aboutMe}
-					onChange = {this.handleChange}/>
-				{/*</textarea>*/}
-			</header>
-			<br/>
-			<br/>
-			<h3 className="Preferences">Please indicate your housing preferences in this section:</h3>
-			<br/>
-			<header className="PriceRange">
-				<label>Price Range:&nbsp;$</label>
-				<input
-					type = "text"
-					name = "lowPrice"
-					id = "lowPrice"
-					onChange = {this.handleChange}
-					value = {this.state.lowPrice}
-					placeholder = "Low End"/>
-				<label>&nbsp;to&nbsp;$</label>
-				<input
-					type = "text"
-					id = "highPrice"
-					name = "highPrice"
-					onChange = {this.handleChange}
-					value = {this.state.highPrice}
-					placeholder = "High End"/>
-			</header>
-			<br/>
-			<br/>
-			<header className="Housemates">
-				<label>Number of Housemates:&nbsp;</label>
-				<input
-					type = "text"
-					id = "minHousemates"
-					name = "minHousemates"
-					onChange = {this.handleChange}
-					value = {this.state.minHousemates}
-					placeholder = "Min # of Housemates"/>
-				<label>&nbsp;to&nbsp;</label>
-				<input
-					type = "text"
-					id = "maxHousemates"
-					name = "maxHousemates"
-					onChange = {this.handleChange}
-					value = {this.state.maxHousemates}
-					placeholder = "Max # of Housemates"/>
-			</header>
-			<br/>
-			<br/>
-			<header className="Rooms">
-				<label>Number of Bedrooms:&nbsp;</label>
-				<input
-					type = "text"
-					id = "minBed"
-					name = "minBed"
-					onChange = {this.handleChange}
-					value = {this.state.minBed}
-					placeholder = "Min # of Bedrooms"/>
-				<label>&nbsp;to&nbsp;</label>
-				<input
-					type = "text"
-					id = "maxBed"
-					name = "maxBed"
-					onChange = {this.handleChange}
-					value = {this.state.maxBed}
-					placeholder = "Max # of Bedrooms"/>
-			</header>
-			<br/>
-			<br/>
-			<header className="Bathrooms">
-				<label>Number of Bathrooms:&nbsp;</label>
-				<input
-					type = "text"
-					id = "minBath"
-					name = "minBath"
-					onChange = {this.handleChange}
-					value = {this.state.minBath}
-					placeholder = "Min # of Bathrooms"/>
-				<label>&nbsp;to&nbsp;</label>
-				<input
-					type = "text"
-					id = "maxBath"
-					name = "maxBath"
-					onChange = {this.handleChange}
-					value = {this.state.maxBath}
-					placeholder = "Max # of Bathrooms"/>
-			</header>
-			<br/>
-			<br/>
-			<header className="Garage">
-				<label>Garage?&nbsp;&nbsp;</label>
-				<input
-					type = "checkbox"
-					id = "wantGarage"
-					name = "wantGarage"
-					checked = {this.state.wantGarage}
-					onChange = {this.handleChange}/>
-				<label>Yes&nbsp;&nbsp;</label>
-				<input
-					type = "checkbox"
-					id = "noGarage"
-					name = "noGarage"
-					onChange = {this.handleChange}
-					checked = {this.state.noGarage}/>
-				<label>No</label>
-			</header>
-			<br/>
-			<br/>
-			<header className="Pets">
-				<label>Will you have any pets?&nbsp;&nbsp;</label>
-				<input
-					type = "checkbox"
-					id = "hasPets"
-					name = "hasPets"
-					onChange = {this.handleChange}
-					checked = {this.state.hasPets}/>
-				<label>Yes&nbsp;&nbsp;</label>
-				<input
-					type = "checkbox"
-					id = "noPets"
-					name = "noPets"
-					onChange = {this.handleChange}
-					checked = {this.state.noPets}/>
-				<label>No</label>
-			</header>
-			<br/>
-			<br/>
-			<header className="Bus">
-				<label>Preferred Bus Routes:</label>
-				<br/>
-				<input
-					type = "checkbox"
-					id = "route10"
-					name = "route10"
-					onChange = {this.handleChange}
-					checked = {this.state.route10}/>
-				<label>Route 10</label>
-				<br/>
-				<input
-					type = "checkbox"
-					id = "route15"
-					name = "route15"
-					onChange = {this.handleChange}
-					checked = {this.state.route15}/>
-				<label>Route 15</label>
-				<br/>
-				<input
-					type = "checkbox"
-					id = "route16"
-					name = "route16"
-					onChange = {this.handleChange}
-					checked = {this.state.route16}/>
-				<label>Route 16</label>
-				<br/>
-				<input
-					type = "checkbox"
-					id = "route19"
-					name = "route19"
-					onChange = {this.handleChange}
-					checked = {this.state.route19}/>
-				<label>Route 19</label>
-				<br/>
-				<input
-					type = "checkbox"
-					id = "route20"
-					name = "route20"
-					onChange = {this.handleChange}
-					checked = {this.state.route20}/>
-				<label>Route 20</label>
-				<br/>
-				<input
-					type = "checkbox"
-					id = "route22"
-					name = "route22"
-					onChange = {this.handleChange}
-					checked = {this.state.route22}/>
-				<label>Route 22</label>
-			</header>
-			<br/>	
-			<br/>
-			<header className="Location">
-				<label>Location:</label>
-				<br/>
-				<input
-					type = "checkbox"
-					id = "beach"
-					name = "beach"
-					onChange = {this.handleChange}
-					checked = {this.state.beach}/>
-				<label>Near the Beach</label>
-				<br/>
-				<input
-					type = "checkbox"
-					id = "downtown"
-					name = "downtown"
-					onChange = {this.handleChange}
-					checked = {this.state.downtown}/>
-				<label>Near Downtown</label>
-				<br/>
-				<input
-					type = "checkbox"
-					id = "campus"
-					name = "campus"
-					onChange = {this.handleChange}
-					checked = {this.state.campus}/>
-				<label>Near Campus</label>
-			</header>
-			<br/>
-			<br/>
-{/*			<button type="submit" className="btn btn-primary">Save</button> */}
-{/*			<button type="button" onClick={this.onSubmit} className="btn">Save</button>*/}
-			 <button type="submit" onClick={this.handleSubmit}>Submit</button>
-{/*			{this.state.showName && <p>"FirstName: " {this.state.firstName}</p>}*/}
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-		</div>
-		</form>
-{/*		<h1>Your name is: {this.state.firstName}</h1>*/}
+			<form onSubmit={this.handleSubmit}>
+
+				<div className="container">
+					<div className="row header">
+						<div className="col-md-12">
+							<h1>
+								<a href="/#">Treehouse Tenant Signup</a>
+							</h1>
+							<p className="lead">Tell us about yourself!</p>
+						</div>
+					</div>
+					<br/>
+
+					<div className="row">
+						<div className="col-md-6">
+							<h3>Your Information</h3>
+							<div>
+								<form>
+									<div>
+										<div className="form-group has-error">
+											<label for="id_subject">Name:&nbsp;</label>
+											{/*}<input maxlength="100"
+												type="text"
+												name="subject"
+												className="form-control"
+												id="id_subject"
+												placeholder="Please enter your full name here"
+												ref='firstName'
+											/>*/}
+											<input type = "text"
+												id = "firstName"
+												name = "firstName"
+												ref = 'firstName'
+												placeholder = "First Name"
+												onChange = {this.handleChange}
+												value={this.state.firstName}
+											/>&nbsp;&nbsp;&nbsp;
+											{/*}<label>&nbsp;&nbsp;Last Name:&nbsp;</label>*/}
+											<input type = "text"
+												id = "lastName"
+												name = "lastName"
+												ref = 'lastName'
+												placeholder = "Last Name"
+												onChange = {this.handleChange}
+												value = {this.state.lastName}
+											/>
+										</div>
+
+										<div className="form-group">
+											<label for="id_message">Date of Birth:&nbsp;&nbsp;&nbsp;</label>
+											{/*}<input type="text"
+												name="message"
+												className="form-control"
+												id="id_message"
+												placeholder="How old are you?"
+												ref='age'
+											/>*/}
+											<input type="date"
+												id = "dob"
+												name = "dob"
+												min = "1900-01-01"
+												max = "2010-01-01"
+												ref='dob'
+												value = {this.state.dob}
+												onChange = {this.handleChange}
+											/>
+										</div>
+
+										<div className="form-group">
+											<label for="id_sender">About Me:</label>
+											<textarea
+												name = "aboutMe"
+												className="form-control"
+												id="aboutMe"
+												placeholder="Tell your future landlord about yourself"
+												rows = "5"
+												cols = "50"
+												ref='aboutMe'
+												value = {this.state.aboutMe}
+												onChange = {this.handleChange}
+											/>
+
+										</div>
+
+										<div className="form-group">
+											<label for="id_sender">Do you plan on living with pets?</label>
+											<form>
+    										<div className="radio">
+      										<label>
+        									<input type="radio" value="true"
+                      			checked={this.state.hasPets === 'true'}
+                      			onChange={this.handlePetsChange} />
+        										&nbsp;Yes&nbsp;&nbsp;&nbsp;
+      										</label>
+      										<label>
+        									<input type="radio" value="false"
+                      			checked={this.state.hasPets === 'false'}
+                      			onChange={this.handlePetsChange} />
+        										&nbsp;No
+      										</label>
+    										</div>
+  										</form>
+											{/*}<div className="d-flex">
+												<div className="form-check">
+													<input className="form-check-input"
+														type="radio"
+														name="hasPets"
+														id="hasPets"
+														value="hasPets"
+														checked={this.state.hasPets === 'true'}
+              							onChange={this.handleChange}
+													/>
+													<label className="form-check-label" for="hasPets">
+														Yes
+													</label>
+												</div>
+												&nbsp;	&nbsp;	&nbsp;
+												<div className="form-check">
+													<input className="form-check-input"
+														type="radio"
+														name="noPets"
+														id="noPets"
+														value="noPets"
+														checked={this.state.noPets === 'true'}
+              							onChange={this.handleChange}
+													/>
+													<label className="form-check-label" for="noPets">
+														No
+													</label>
+												</div>
+											</div>*/}
+										</div>
+
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<div className="col-md-6">
+							<h3>Your Preferences</h3>
+							<div>
+								<form>
+									<div>
+										<div className="form-group has-error">
+											<label for="bed">Bedrooms:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+											<input type = "text"
+												id = "minBed"
+												name = "minBed"
+												ref = 'minBed'
+												placeholder = "Min # Bedrooms"
+												onChange = {this.handleChange}
+												value = {this.state.minBed}
+											/>
+											&nbsp;to&nbsp;&nbsp;&nbsp;
+											{/*}<label>&nbsp;&nbsp;Last Name:&nbsp;</label>*/}
+											<input type = "text"
+												id = "maxBed"
+												name = "maxBed"
+												ref = 'maxBed'
+												placeholder = "Max # Bedrooms"
+												onChange = {this.handleChange}
+												value = {this.state.maxBed}
+											/>
+											{/*<input maxlength="2"
+												type="text"
+												name="bed"
+												className="form-control"
+												id="bed"
+												placeholder="Minimum # of Bedrooms Required"
+												ref='bed'
+											/>*/}
+										</div>
+
+										<div className="form-group">
+										<label for="bed">Bathrooms:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+										<input type = "text"
+											id = "minBath"
+											name = "minBath"
+											ref = 'minBath'
+											placeholder = "Min # Bathrooms"
+											onChange = {this.handleChange}
+											value = {this.state.minBath}
+										/>
+										&nbsp;to&nbsp;&nbsp;&nbsp;
+										{/*}<label>&nbsp;&nbsp;Last Name:&nbsp;</label>*/}
+										<input type = "text"
+											id = "maxBath"
+											name = "maxBath"
+											ref = 'maxBath'
+											placeholder = "Max # Bathrooms"
+											onChange = {this.handleChange}
+											value = {this.state.maxBath}
+										/>
+											{/*<label for="bath">Number of Bathrooms:</label>
+											<input type="text"
+												name="bath"
+												className="form-control"
+												id="bath"
+												placeholder="Minimum # of Bathrooms Required"
+												ref='bath'
+											/>*/}
+										</div>
+
+										<div className="form-group">
+											{/*<label for="id_sender">Number of Housemates:</label>
+											<input type="text"
+												name="sender"
+												className="form-control"
+												id="id_sender"
+												placeholder="Maximum # of Housemates"
+												ref='housemates'
+											/>*/}
+											<label for="bed">Housemates:&nbsp;&nbsp;&nbsp;</label>
+											<input type = "text"
+												id = "minHousemates"
+												name = "minHousemates"
+												ref = 'minHousemates'
+												placeholder = "Min # Housemates"
+												onChange = {this.handleChange}
+												value = {this.state.minHousemates}
+											/>&nbsp;to&nbsp;&nbsp;&nbsp;
+											{/*}<label>&nbsp;&nbsp;Last Name:&nbsp;</label>*/}
+											<input type = "text"
+												id = "maxHousemates"
+												name = "maxHousemates"
+												ref = 'maxHousemates'
+												placeholder = "Max # Housemates"
+												onChange = {this.handleChange}
+												value = {this.state.maxHousemates}
+											/>
+										</div>
+
+										<div className="form-group">
+											<label>Price/Month:&nbsp;</label>$&nbsp;
+											<input
+												type = "text"
+												name = "lowPrice"
+												id = "lowPrice"
+												onChange = {this.handleChange}
+												value = {this.state.lowPrice}
+												placeholder = "Low End"
+											/>
+											&nbsp;to&nbsp;$&nbsp;
+											<input
+												type = "text"
+												id = "highPrice"
+												name = "highPrice"
+												onChange = {this.handleChange}
+												value = {this.state.highPrice}
+												placeholder = "High End"
+											/>
+											{/*<label for="id_sender">Price / Month:</label>
+											<input type="text"
+												name="sender"
+												className="form-control"
+												id="id_sender"
+												placeholder="What is the maximum you are willing to pay?"
+												ref='price'
+											/>*/}
+										</div>
+									</div>
+								</form>
+							</div>
+
+							<form>
+								<div>
+									{/*<div className="form-group">
+										<label for="id_sender">Do you need a garage?</label>
+										<div className="d-flex">
+											<div className="form-check">
+												<input className="form-check-input"
+													type="radio"
+													name="exampleRadios"
+													id="exampleRadios1"
+													value="option1"
+													ref='wantGarage'
+												/>
+												<label className="form-check-label" for="exampleRadios1">
+													Yes
+												</label>
+											</div>
+											&nbsp;	&nbsp;	&nbsp;
+											<div className="form-check">
+												<input className="form-check-input"
+													type="radio"
+													name="noGarage"
+													id="noGarage"
+													value="noGarage"
+													checked={this.state.noGarage === "true" || this.props.noGarage === "true"}
+              						onChange={this.handleChange}
+												/>
+												<label className="form-check-label" for="exampleRadios2">
+													No
+												</label>
+											</div>
+										</div>
+									</div>*/}
+									<div className="form-group">
+										<label for="id_sender">Do you need a garage?</label>
+										<form>
+											<div className="radio">
+												<label>
+												<input type="radio" value="true"
+													checked={this.state.wantGarage === 'true'}
+													onChange={this.handleGarageChange} />
+													&nbsp;Yes&nbsp;&nbsp;&nbsp;
+												</label>
+												<label>
+												<input type="radio" value="false"
+													checked={this.state.wantGarage === 'false'}
+													onChange={this.handleGarageChange} />
+													&nbsp;No
+												</label>
+											</div>
+										</form>
+										{/*}<div className="d-flex">
+											<div className="form-check">
+												<input className="form-check-input"
+													type="radio"
+													name="hasPets"
+													id="hasPets"
+													value="hasPets"
+													checked={this.state.hasPets === 'true'}
+													onChange={this.handleChange}
+												/>
+												<label className="form-check-label" for="hasPets">
+													Yes
+												</label>
+											</div>
+											&nbsp;	&nbsp;	&nbsp;
+											<div className="form-check">
+												<input className="form-check-input"
+													type="radio"
+													name="noPets"
+													id="noPets"
+													value="noPets"
+													checked={this.state.noPets === 'true'}
+													onChange={this.handleChange}
+												/>
+												<label className="form-check-label" for="noPets">
+													No
+												</label>
+											</div>
+										</div>*/}
+									</div>
+
+									<div className="form-group">
+										<label for="id_sender">Preferred Bus Routes:</label>
+										<div className="d-flex">
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox"
+													class="custom-control-input"
+													id="route10"
+													name="route10"
+													onChange = {this.handleChange}
+													checked = {this.state.route10}
+												/>
+												<label class="custom-control-label" for="route10">10</label>
+											</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox"
+													class="custom-control-input"
+													id="route15"
+													name="route15"
+													onChange = {this.handleChange}
+													checked = {this.state.route15}
+												/>
+												<label class="custom-control-label" for="route15">15</label>
+											</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox"
+													class="custom-control-input"
+													id="route16"
+													name="route16"
+													onChange = {this.handleChange}
+													checked = {this.state.route16}
+												/>
+												<label class="custom-control-label" for="route16">16</label>
+											</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox"
+													class="custom-control-input"
+													id="route19"
+													name="route19"
+													onChange = {this.handleChange}
+													checked = {this.state.route19}
+												/>
+												<label class="custom-control-label" for="route19">19</label>
+											</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox"
+													class="custom-control-input"
+													id="route20"
+													name="route20"
+													onChange = {this.handleChange}
+													checked = {this.state.route20}
+												/>
+												<label class="custom-control-label" for="route20">20</label>
+											</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox"
+													class="custom-control-input"
+													id="route22"
+													name="route22"
+													onChange = {this.handleChange}
+													checked = {this.state.route22}
+												/>
+												<label class="custom-control-label" for="route22">22</label>
+											</div>
+
+										</div>
+									</div>
+
+
+									<div className="form-group">
+										<label for="id_sender">Location:</label>
+										<div className="d-flex">
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox"
+													class="custom-control-input"
+													id="beach"
+													name = "beach"
+													onChange = {this.handleChange}
+													checked = {this.state.beach}
+												/>
+												<label class="custom-control-label" for="beach">Near the Beach</label>
+											</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox"
+													class="custom-control-input"
+													name = "downtown"
+													id="downtown"
+													onChange = {this.handleChange}
+													checked = {this.state.downtown}
+												/>
+												<label class="custom-control-label" for="downtown">Near Downtown</label>
+											</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox"
+													class="custom-control-input"
+													name="campus"
+													id="campus"
+													onChange = {this.handleChange}
+													checked = {this.state.campus}
+												/>
+												<label class="custom-control-label" for="campus">Near Campus</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+
+				<br/><br/>
+
+				<div className="App">
+					<button className="btn btn-primary center-btn" type="submit" >Submit</button>
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+			</form>
 		</React.Fragment>
 	);
 }
