@@ -22,6 +22,10 @@ function NavBar(){
         <button type="button" className="btn btn-success">Chat</button>
         </a>
 
+        <a href="https://treehouse-115.web.app/" >
+        <button type="button" className="btn btn-success">Login</button>
+        </a>
+
       </Navbar>
     );
 }
