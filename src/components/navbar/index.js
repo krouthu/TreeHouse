@@ -17,13 +17,17 @@ function NavBar(){
             <Nav.Link> <Link to="/renter-profile">Renter Profile</Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
+    
+        <a href="https://treehouse-115.web.app/" >
+        <button type="button" className="btn btn-success">Login</button>
+        </a>
+
+        <a href="https://renter-profile2.web.app/" >
+        <button type="button" className="btn btn-success">Renter</button>
+        </a>
 
         <a href="https://chat-112.web.app/" >
         <button type="button" className="btn btn-success">Chat</button>
-        </a>
-
-        <a href="https://treehouse-115.web.app/" >
-        <button type="button" className="btn btn-success">Login</button>
         </a>
 
       </Navbar>
