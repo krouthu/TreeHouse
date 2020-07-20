@@ -1,0 +1,75 @@
+// Override default variables before the import
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+#header {
+  width: 10px;
+  height: 20px;
+}
+
+.container {
+    font-weight: bold;
+    padding-top: 40px
+}
+
+.Names {
+    font-weight: bold;
+    padding: 20px
+}
+
+.DOB {
+    font-weight: bold;
+    padding: 20px
+}
+
+
+.AboutMe {
+    font-weight: bold;
+    padding: 20px
+}
+
+.Preferences {
+    font-weight: bold;
+    padding: 20px
+}
+
+.PriceRange {
+
+}
+
+.Housemates {
+
+}
+
+.Rooms {
+
+}
+
+.Bathrooms {
+
+}
+
+.Garage {
+    font-weight: bold;
+    padding: 20px
+}
+
+.Pets{
+    font-weight: bold;
+    padding: 20px
+}
+
+.Bus {
+    font-weight: bold;
+    padding: 20px
+}
+
+.Location {
+    font-weight: bold;
+    padding: 20px
+}
+
+body {
+    font-family: Helvetica, Arial;
+    color: black;
+}

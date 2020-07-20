@@ -5,7 +5,7 @@ import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
 
 function NavBar(){
     return(
-      <Navbar bg="primary" variant="dark"> 
+      <Navbar bg="primary" variant="dark">
         <Navbar.Brand>
           <Link to="/">Treehouse</Link>
         </Navbar.Brand>
@@ -16,8 +16,8 @@ function NavBar(){
             <Nav.Link> <Link to="/landlord">Landlord Profile</Link></Nav.Link>
             <Nav.Link> <Link to="/renter-profile">Renter Profile</Link></Nav.Link>
           </Nav>
-        </Navbar.Collapse>   
-        
+        </Navbar.Collapse>
+
         <a href="https://chat-112.web.app/" >
         <button type="button" className="btn btn-success">Chat</button>
         </a>
