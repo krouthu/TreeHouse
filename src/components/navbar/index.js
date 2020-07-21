@@ -26,6 +26,10 @@ function NavBar(){
         <button type="button" className="btn btn-success">Renter</button>
         </a>
 
+        <a href="https://renter-profile2.web.app/" >
+        <button type="button" className="btn btn-success">Landlord</button>
+        </a>
+
         <a href="https://chat-112.web.app/" >
         <button type="button" className="btn btn-success">Chat</button>
         </a>
