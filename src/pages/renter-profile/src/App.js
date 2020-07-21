@@ -22,9 +22,7 @@ class App extends Component {
 			minBath: '',
 			maxBath: '',
 			wantGarage: false,
-			noGarage: false,
 			hasPets: false,
-			noPets: false,
 			route10: false,
 			route15: false,
 			route16: false,
@@ -46,15 +44,15 @@ class App extends Component {
 	}
 
 	handlePetsChange = (changeEvent) => {
-  this.setState({
-    hasPets: changeEvent.target.value
-  });
+  	this.setState({
+    	hasPets: changeEvent.target.value
+  	});
 }
 
-handleGarageChange = (changeEvent) => {
-this.setState({
-	wantGarage: changeEvent.target.value
-});
+	handleGarageChange = (changeEvent) => {
+		this.setState({
+			wantGarage: changeEvent.target.value
+		});
 }
 
 	handleSubmit = (e) => {
@@ -80,9 +78,7 @@ this.setState({
 			minBath: this.state.minBath,
 			maxBath: this.state.maxBath,
 			wantGarage: this.state.wantGarage,
-			noGarage: this.state.noGarage,
 			hasPets: this.state.hasPets,
-			noPets: this.state.noPets,
 			route10: this.state.route10,
 			route15: this.state.route15,
 			route16: this.state.route16,
@@ -93,34 +89,34 @@ this.setState({
 			downtown: this.state.downtown,
 			campus: this.state.campus
 		}
-		renterRef.push(renter);
-		this.setState({
-			firstName: '',
-			lastName: '',
-			dob: '',
-			aboutMe: '',
-			lowPrice: '',
-			highPrice: '',
-			minHousemates: '',
-			maxHousemates: '',
-			minBed: '',
-			maxBed: '',
-			minBath: '',
-			maxBath: '',
-			wantGarage: false,
-			noGarage: false,
-			hasPets: false,
-			noPets: false,
-			route10: false,
-			route15: false,
-			route16: false,
-			route19: false,
-			route20: false,
-			route22: false,
-			beach: false,
-			downtown: false,
-			campus: false
+		renterRef.push(renter, () => {
+			window.location.href = "http://localhost:1234/";
 		});
+		// this.setState({
+		// 	firstName: '',
+		// 	lastName: '',
+		// 	dob: '',
+		// 	aboutMe: '',
+		// 	lowPrice: '',
+		// 	highPrice: '',
+		// 	minHousemates: '',
+		// 	maxHousemates: '',
+		// 	minBed: '',
+		// 	maxBed: '',
+		// 	minBath: '',
+		// 	maxBath: '',
+		// 	wantGarage: false,
+		// 	hasPets: false,
+		// 	route10: false,
+		// 	route15: false,
+		// 	route16: false,
+		// 	route19: false,
+		// 	route20: false,
+		// 	route22: false,
+		// 	beach: false,
+		// 	downtown: false,
+		// 	campus: false
+		// });
 
 
 //		this.setState({ text: '' });
@@ -656,7 +652,12 @@ this.setState({
 				<br/><br/>
 
 				<div className="App">
-					<button className="btn btn-primary center-btn" type="submit" >Submit</button>
+
+					{/*<a href="http://localhost:1234/" >*/}
+					<button className="btn btn-primary center-btn" type="submit">Submit</button>
+        	{/*<button type="button" className="btn btn-success">Submit</button>*/}
+        	{/*</a>*/}
+
 					<br />
 					<br />
 					<br />
