@@ -250,28 +250,14 @@ class App extends React.Component {
 
 
 								<div className="row">
+									
+									
+									
+									
 									<div className="col-md-6">
-										<h3>Identity</h3>
-										<div>
-											<div className="form-group">
-												<label for="id_sender">Select Your Identity:</label>
-												<div className="d-flex">
-													<div className="form-check">
-														<input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked />
-														<label className="form-check-label" for="exampleRadios1">
-															landlord
-													</label>
-													</div>
-												&nbsp;	&nbsp;	&nbsp;
-												<div className="form-check">
-														<input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" />
-														<label className="form-check-label" for="exampleRadios2">
-															renter
-													</label>
-													</div>
-												</div>
-											</div>
-										</div>
+										
+										
+								
 
 										<h3>House information</h3>
 										<div>
