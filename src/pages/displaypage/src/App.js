@@ -109,7 +109,7 @@ class App extends React.Component {
 		} else if (name && age) {
 			const uid = new Date().getTime().toString();
 			const { developers } = this.state;
-			developers.push({ uid, name, age });
+			developers.push({ uid, name, age, aboutMe, price, gender, housemates, bed, bath, garage, hasPets, route10, route15, route16, route19, route20, route22 });
 			this.setState({ developers });
 		}
 
@@ -118,26 +118,25 @@ class App extends React.Component {
 		//this.refs.role.value = "";
 		this.refs.uid.value = "";
 
-		this.refs.age.value = ''
-		this.state.aboutMe = ''
-		this.state.price = ''
-		this.state.gender = ''
-		this.state.housemates = ''
-		this.state.bed = ''
-		this.state.bath = ''
-		this.state.garage = ''
-		this.state.hasPets = false
+		this.refs.age.value = '';
+		this.refs.aboutMe.value = '';
+		this.refs.price.value = '';
+		this.refs.gender.value = '';
+		this.refs.housemates.value = '';
+		this.refs.bed.value = '';
+		this.refs.bath.value = '';
+		this.refs.garage.value = '';
+		this.refs.hasPets.value = false;
 
-		this.state.route10 = false
-		this.state.route15 = false
-		this.state.route16 = false
-		this.state.route19 = false
-		this.state.route20 = false
-		this.state.route22 = false
-		this.state.beach = false
-		this.state.downtown = false
-		this.state.campus = false
-
+		this.refs.route10.value = false;
+		this.refs.route15.value = false;
+		this.refs.route16.value = false;
+		this.refs.route19.value = false;
+		this.refs.route20.value = false;
+		this.refs.route22.value = false;
+		this.refs.beach.value = false;
+		this.refs.downtown.value = false;
+		this.refs.campus.value = false;
 
 
 	};
@@ -166,9 +165,9 @@ class App extends React.Component {
 		this.refs.bed.value = developer.bed;
 		this.refs.bath.value = developer.bath;
 
-		
+
 		this.refs.garage.value = developer.garage;
-		this.refs.hasPets.value = developer.hasPets; 
+		this.refs.hasPets.value = developer.hasPets;
 		this.refs.route10.value = developer.route10;
 
 		this.refs.route15.value = developer.route15;
@@ -217,15 +216,15 @@ class App extends React.Component {
 							>
 								<div className="card-body card-margin">
 									<div className="card-body">
-										<h5 className="card-title text-center">{'title'}</h5>
-										<p className="card-text text-center">{'Name'}:{developer.name}</p>
-										<p className="card-text text-center">{'Age'}:{developer.age}</p>
-										<p className="card-text text-center">{'Gender'}:{developer.gender}</p>
-										<p className="card-text text-center">{'Aboutme'}:{developer.aboutMe}</p>
-										<p className="card-text text-center">{'Price'}:{developer.price}</p>
+										<h5 className="card-title text-center">{developer.name}</h5>
+
+										<p className="card-text text-center">{'Age:'}{developer.age}</p>
+										<p className="card-text text-center">{'Gender:'}{developer.gender}</p>
+										<p className="card-text text-center">{'Aboutme:'}{developer.aboutMe}</p>
+										<p className="card-text text-center">{'Price:$'}{developer.price}</p>
 										<p className="card-text text-center">{developer.bed}{' beds'},{developer.bath}{' bath'},{developer.garage}{' parking spaces'},</p>
-										<p className="card-text text-center">{developer.bed}{' housemates'},{developer.hasPets}{' pets'}</p>
-										<p className="card-text text-center">{developer.route10}{'route10'},{developer.route15}{'route15'},{developer.route16}{'route16'},{developer.route19}{'route19'},{'route20'}{'route22'}</p>
+										<p className="card-text text-center">{developer.housemates}{' housemates'},{developer.hasPets}{' pets'}</p>
+										<p className="card-text text-center">{developer.route10}{'route10'},{developer.route15},{'route15'},{developer.route16}{'route16'},{developer.route19}{'route19'},{'route20'}{'route22'}</p>
 										<p className="card-text text-center">{'beach'},{'downtown'},{'campus'}</p>
 									</div>
 								</div>
@@ -250,14 +249,14 @@ class App extends React.Component {
 
 
 								<div className="row">
-									
-									
-									
-									
+
+
+
+
 									<div className="col-md-6">
-										
-										
-								
+
+
+
 
 										<h3>House information</h3>
 										<div>
