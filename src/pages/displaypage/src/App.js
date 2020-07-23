@@ -207,7 +207,7 @@ class App extends React.Component {
 					</div>
 					<div className="row">
 						{/* 第二行 */}
-						<div className="col-xl-12">人、
+						<div className="col-xl-12">
               {developers.map(developer => (
 							<div
 								key={developer.uid}
