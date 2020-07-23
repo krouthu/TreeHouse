@@ -187,12 +187,15 @@ class App extends Component {
 	return (
 		<React.Fragment>
 			<form onSubmit={this.handleSubmit}>
-
+				<div className="bg flex-center">
+					<h1>Treehouse</h1>
+					<p>Let Property Owners Know You're Looking for a Place</p>
+				</div>
 				<div className="container">
 					<div className="row header">
 						<div className="col-md-12">
 							<h1>
-								<a href="/#">Treehouse Tenant Signup</a>
+								<a href="/#">Treehouse Tenant Profile</a>
 							</h1>
 							<p className="lead">Tell us about yourself!</p>
 						</div>

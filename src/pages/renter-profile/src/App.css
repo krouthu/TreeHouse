@@ -37,6 +37,30 @@
   }
 }
 
+.bg {
+  width: 100%;
+  height: 100vh;
+  background-image: url("./picture.jpg");
+  color: #fff;
+  overflow: hidden;
+}
+
+.bg > h1 {
+  font-weight: 520;
+  font-size: 80px;
+}
+
+.bg > p {
+  font-size: 40px;
+  font-weight: 480;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .lead {
   margin-bottom: 20px;
