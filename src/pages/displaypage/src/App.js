@@ -109,7 +109,7 @@ class App extends React.Component {
 		} else if (name && age) {
 			const uid = new Date().getTime().toString();
 			const { developers } = this.state;
-			developers.push({ uid, name, age, aboutMe, price, gender, housemates, bed, bath, garage, hasPets, route10, route15, route16, route19, route20, route22 });
+			developers.push({ uid, name, age, aboutMe, price, gender, housemates, bed, bath, garage, hasPets, route10, route15, route16, route19, route20, route22 , downtown, campus, beach});
 			this.setState({ developers });
 		}
 
@@ -223,9 +223,9 @@ class App extends React.Component {
 										<p className="card-text text-center">{'Aboutme:'}{developer.aboutMe}</p>
 										<p className="card-text text-center">{'Price:$'}{developer.price}</p>
 										<p className="card-text text-center">{developer.bed}{' beds'},{developer.bath}{' bath'},{developer.garage}{' parking spaces'},</p>
-										<p className="card-text text-center">{developer.housemates}{' housemates'},{developer.hasPets}{' pets'}</p>
-										<p className="card-text text-center">{developer.route10}{'route10'},{developer.route15},{'route15'},{developer.route16}{'route16'},{developer.route19}{'route19'},{'route20'}{'route22'}</p>
-										<p className="card-text text-center">{'beach'},{'downtown'},{'campus'}</p>
+										<p className="card-text text-center">{developer.housemates}{' housemates'},{String(developer.hasPets)}{' pets'}</p>
+										<p className="card-text text-center">{String(developer.route10)}{'route10'},{String(developer.route15)},{' route15'},{String(developer.route16)}{' route16'},{String(developer.route19)}{' route19'},{String(developer.route20)}{' route20'},{String(developer.route22)}{' route22'}</p>
+										<p className="card-text text-center">{String(developer.beach)}{' beach'},{String(developer.downtown)}{' downtown'},{String(developer.campus)}{' campus'}</p>
 									</div>
 								</div>
 							</div>
