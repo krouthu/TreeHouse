@@ -5,6 +5,7 @@ import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
 import fire from './fire';
 
 function NavBar(){
+
     return(
       <Navbar bg="primary" variant="dark">
         <Navbar.Brand>
