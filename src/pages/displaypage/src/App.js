@@ -202,7 +202,7 @@ class App extends React.Component {
 							<h1>
 								<a href="#">Treehouse Listings</a>
 							</h1>
-							<p className="lead">Please submit your information here.</p>
+							<p className="lead">Find the listings information here.</p>
 						</div>
 					</div>
 					<div className="row">
