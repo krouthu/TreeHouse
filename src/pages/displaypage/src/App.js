@@ -224,8 +224,8 @@ class App extends React.Component {
 										<p className="card-text text-center">{'Price:$'}{developer.price}</p>
 										<p className="card-text text-center">{developer.bed}{' beds'},{developer.bath}{' bath'},{developer.garage}{' parking spaces'},</p>
 										<p className="card-text text-center">{developer.housemates}{' housemates'},{String(developer.hasPets)}{' pets'}</p>
-										<p className="card-text text-center">{String(developer.route10)}{'route10'},{String(developer.route15)},{' route15'},{String(developer.route16)}{' route16'},{String(developer.route19)}{' route19'},{String(developer.route20)}{' route20'},{String(developer.route22)}{' route22'}</p>
-										<p className="card-text text-center">{String(developer.beach)}{' beach'},{String(developer.downtown)}{' downtown'},{String(developer.campus)}{' campus'}</p>
+										<p className="card-text text-center">{'Bus: '}{String(developer.route10)}{' route10'},{String(developer.route15)}{' route15'},{String(developer.route16)}{' route16'},{String(developer.route19)}{' route19'},{String(developer.route20)}{' route20'},{String(developer.route22)}{' route22'}</p>
+										<p className="card-text text-center">{'Location: '}{String(developer.beach)}{' beach'},{String(developer.downtown)}{' downtown'},{String(developer.campus)}{' campus'}</p>
 									</div>
 								</div>
 							</div>
