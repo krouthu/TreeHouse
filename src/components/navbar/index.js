@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from '@reach/router'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
-import fire from './fire';
 
 function NavBar(){
 
